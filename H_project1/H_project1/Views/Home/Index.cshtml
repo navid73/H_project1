@@ -1,0 +1,387 @@
+﻿@model H_project1.Models.AccessData.Page_index
+@{
+   
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+
+    <title>Main Landing Page</title>
+
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Main Font -->
+    <script src="js/webfontloader.min.js"></script>
+    <script>
+		WebFont.load({
+			google: {
+				families: ['Roboto:300,400,500,700:latin']
+			}
+		});
+    </script>
+
+   
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="~/content/assets/Bootstrap/dist/css/bootstrap.css">
+    <!-- Main Styles CSS -->
+    <!--<link rel="stylesheet" type="text/css" href="css/main.min.css">-->
+    <link rel="stylesheet" type="text/css" href="~/content/assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="~/content/assets/css/pro-fitkit2.css">
+    <link rel="stylesheet" type="text/css" href="~/content/assets/css/astonish.css">
+    <link rel="stylesheet" type="text/css" href="~/content/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/content/assets/css/icomoon.css">
+    <link rel="stylesheet" type="text/css" href="~/content/assets/css/fonts.min.css">
+    <link rel="stylesheet" type="text/css" href="~/content/assets/assets/css/Font-Awesome/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="~/content/assets/css/style2.css">
+
+    <style type="text/css">
+        .ntext {
+            font-weight: 800;
+            -webkit-text-fill-color: transparent !important;
+            -webkit-background-clip: text !important;
+            color: #fc4e1b !important;
+            background: linear-gradient(left, #fc4e1b 0%, #f6b533 100%);
+            background: -o-linear-gradient(left, #fc4e1b 0%, #f6b533 100%);
+            background: -ms-linear-gradient(left, #fc4e1b 0%, #f6b533 100%);
+            background: -moz-linear-gradient(left, #fc4e1b 0%, #f6b533 100%);
+            background: -webkit-linear-gradient(left, #fc4e1b 0%, #f6b533 100%);
+            background-clip: border-box;
+        }
+
+        .nbtn {
+            color: #fff !important;
+            border-color: #7c5ac2 !important;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <header>
+        <div class="main-header main-landing">
+
+            <div class="content-bg-wrap bg-landing"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-6 m-auto col-md-12 col-sm-12 col-12">
+                        <div class="main-header-content">
+                            <!-- logo start -->
+                            <a href="#" class="logo">
+                                <div class="img-wrap">
+                                    <img src="" alt="logo">
+                                </div>
+                                <div class="title-block">
+                                    <h6 class="logo-title">@Model.logo</h6>
+                                    <div class="sub-title">SOCIAL NETWORK</div>
+                                </div>
+                            </a>
+                            <!-- logo start -->
+                            <div dir="ltr">
+                                <h1>@Model.Title</h1>
+                                <p>
+                                   @Model.ContetDescription
+                                </p>
+
+                            </div>
+
+                            <a data-scroll="" href="/Home/Login" class="btn btn-purple btn-lg nbtn">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img class="img-bottom" src="/content/assets/img/group-bottom.png" style="height: 200px" alt="friends">
+
+        </div>
+    </header>
+
+
+    <!-- ======================================== -->
+    <!-- =========== START ABOUT SECTION ============ -->
+    <!-- ======================================== -->
+    <section id="about">
+        <div class="fullwidth-section">
+            <div class="container">
+                <div class="row" style="margin-bottom: 60px;">
+
+                    <div class="col-md-12  text-center">
+                        <h2 class="weight-800 kill-top-margin uppercase" style="color: black;text-align: center;">
+                            About Us</h2>
+                            <h4 class="weight-400" style="color: black;">Astonish is a multi-purpose theme that can be used for a wide variety of uses. It has clean lines and a unique design that is sure to catch every visitors eye!</h4>
+
+                    </div>
+                </div>
+                <!-- ========== START ICON FEATURES BOX ========== -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="icon-feature-horizontal">
+                            <div class="icon">
+                                <i class="im-wand color-primary ae"></i>
+                            </div>
+                            <div class="content">
+                                <h4 class="uppercase weight-700" style="color: black;">Fully Customizable</h4>
+                                <p>Built on the Bootstrap 3 framework. Fully commented and clean code. Valid HTML5 and CSS3.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="icon-feature-horizontal">
+                            <div class="icon">
+                                <i class="im-support color-primary ae" data-delay="250"></i>
+                            </div>
+                            <div class="content">
+                                <h4 class="uppercase weight-700" style="color: black;">Customer Support</h4>
+                                <p>We support our products 100%. If you need help, give us a shout. We want you to be 100% happy with your purchase.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="icon-feature-horizontal">
+                            <div class="icon">
+                                <i class="im-eye color-primary ae" data-delay="500"></i>
+                            </div>
+                            <div class="content">
+                                <h4 class="uppercase weight-700" style="color: black;">Retina Ready</h4>
+                                <p>Astonish is primarily build using font icons and CSS3 techniques which means the site is 100% retina ready.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="icon-feature-horizontal">
+                            <div class="icon">
+                                <i class="im-leaf color-primary ae"></i>
+                            </div>
+                            <div class="content">
+                                <h4 class="uppercase weight-700" style="color: black;">Over 800+ Icons</h4>
+                                <p>Astonish takes advantage of two excellent font icon resources. FontAwesome provides over 350+ icons and Icomoon provides over 450+ icons.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="icon-feature-horizontal">
+                            <div class="icon">
+                                <i class="im-droplet color-primary ae" data-delay="250"></i>
+                            </div>
+                            <div class="content">
+                                <h4 class="uppercase weight-700" style="color: black;">Unlimited Color Options</h4>
+                                <p>For a quick demonstration try out the color option menu. Astonish comes with 10 pre-made color styles but you can make it look however you want.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="icon-feature-horizontal">
+                            <div class="icon">
+                                <i class="im-menu color-primary ae" data-delay="500"></i>
+                            </div>
+                            <div class="content">
+                                <h4 class="uppercase weight-700" style="color: black">Easily Build Your Site</h4>
+                                <p>Astonish is built in sections so you can easily add and remove sections to quickly build your site the way you want.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END ICON FEATURES BOX -->
+            </div>
+        </div>
+        <!-- FEATURES COUNTERS -->
+
+
+    </section>
+    <!-- ======================================== -->
+    <!-- =========== END ABOUT SECTION ============= -->
+    <!-- ======================================== -->
+
+
+    <section>
+        <div id="facts" class="section facts pad">
+            <div class="container">
+                <div class="row fact">
+                    <!-- Facts 1 -->
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="box-icon-3">
+                            <div class="box-icon-top">
+                                <i class="fa fa-heart " style="color: #fff" aria-hidden="true"></i>
+                                <h2 class="counter ntext" data-end-count="8900" data-speed="2500">8900</h2>
+                            </div>
+                            <h3>Project completed</h3>
+                        </div>
+                    </div>
+                    <!-- Facts 2 -->
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="box-icon-3">
+                            <div class="box-icon-top">
+                                <i class="fa fa-heart " style="color: #fff"></i>
+                                <h2 class="counter ntext" data-end-count="1050" data-speed="2500">1050</h2>
+                            </div>
+                            <h3>Happy clients</h3>
+                        </div>
+                    </div>
+                    <!-- Facts 3 -->
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="box-icon-3">
+                            <div class="box-icon-top">
+                                <i class="fa fa-heart " style="color: #fff" aria-hidden="true"></i>
+                                <h2 class="counter ntext" data-end-count="1050" data-speed="2500">1050</h2>
+                            </div>
+                            <h3>Design awards</h3>
+                        </div>
+                    </div>
+                    <!-- Facts 4 -->
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="box-icon-3">
+                            <div class="box-icon-top">
+                                <i class="fa fa-renren " style="color: #fff" aria-hidden="true"></i>
+                                <h2 class="counter ntext" data-end-count="1050" data-speed="2500">1050</h2>
+                            </div>
+                            <h3>Cups of coffee</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--services section started-->
+    <section id="services" class="section-content bg1">
+        <div class="container">
+            <!-- Section title -->
+            <div class="section-title item_bottom text-center" style="opacity: 1; bottom: 0px;">
+                <h1>My <i>Services</i></h1>
+                <p class="tagline" style="font-size: 14px !important">Ut enim ad minim veniam quis nostrud exercitation</p>
+                <div>
+                    <span class="line-large"></span>
+                </div>
+            </div>
+            <!-- End Section title -->
+            <!-- Container Text -->
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 services-new-line">
+                        <!-- services 1-->
+                        <div class="services item_bottom" style="opacity: 1; bottom: 0px;">
+                            <div class="services-icon text-center">
+                                <i class="fa fa-camera fa-4x"></i>
+                            </div>
+                            <div class="services-post">
+                                <h4>Service Name</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                        <!-- End Services 1-->
+                    </div>
+                    <div class="col-md-3 col-sm-6 services-new-line">
+                        <!-- services 2-->
+                        <div class="services item_top" style="opacity: 1; top: 0px;">
+                            <div class="services-icon text-center">
+                                <i class="fa fa-renren fa-4x"></i>
+                            </div>
+                            <div class="services-post">
+                                <h4>Service Name</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                        <!-- End Services 2-->
+                    </div>
+                    <div class="col-md-3 col-sm-6 services-new-line">
+                        <!-- services 3-->
+                        <div class="services item_bottom" style="opacity: 1; bottom: 0px;">
+                            <div class="services-icon text-center">
+                                <i class="fa fa-mobile fa-4x"></i>
+                            </div>
+                            <div class="services-post">
+                                <h4>Service Name</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                        <!-- End Services 3-->
+                    </div>
+                    <div class="col-md-3 col-sm-6 services-new-line">
+                        <!-- services 4-->
+                        <div class="services item_top" style="opacity: 1; top: 0px;">
+                            <div class="services-icon text-center">
+                                <i class="fa fa-html5 fa-4x"></i>
+                            </div>
+                            <div class="services-post">
+                                <h4>Service Name</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
+                        </div>
+                        <!-- End Services 4-->
+                    </div>
+                </div>
+            </div>
+            <!-- End Container Text -->
+        </div>
+    </section>
+    <!--services section ended-->
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer  dark  footer-white  " style="margin: 0;width: 100%">
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="footer-nav">
+                    <ul>
+                        <li>
+                            <a href="#" target="_blank">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">Login</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="credits ml-auto">
+                    <span class="copyright">
+                        ©
+                        <script>
+              document.write(new Date().getFullYear())
+                        </script>, made with <i class="fa fa-heart heart"></i> by navid
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script type="text/javascript" src="~/content/assets/js/Newfolder/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="~/content/assets/js/Newfolder/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="~/content/assets/js/Newfolder/counter.js"></script>
+    <!--<script type="text/javascript" src="js/Newfolder/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="js/Newfolder/jquery.nicescroll.plus.js"></script>
+    <script type="text/javascript" src="js/Newfolder/owl.carousel.min.js"></script>
+    -->
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>

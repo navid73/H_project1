@@ -1,0 +1,228 @@
+﻿@model IEnumerable<H_project1.Models.AccessData.User>
+@{
+    ViewBag.Title = "FriendsRequests";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="header-spacer header-spacer-small"></div>
+
+<!-- Main Header Account -->
+<div class="main-header" style="width: 100% !important; max-width: 100%">
+    <div class="content-bg-wrap bg-account"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
+                <div class="main-header-content">
+                    <h1>Your Account Dashboard</h1>
+                    <p>
+                        Welcome to your account dashboard! Here you’ll find everything you need to change your profile
+                        information, settings, read notifications and requests, view your latest messages, change your pasword and much
+                        more!, have fun!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img class="img-bottom" src="/content/assets/img/account-bottom.png" alt="friends">
+</div>
+
+
+<!-- Your Account Personal Information -->
+
+<div class="container">
+    <div class="row">
+        <div class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+            <div class="ui-block">
+                <div class="ui-block-title">
+                    <h6 class="title">Friend Requests</h6>
+                    <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+                </div>
+
+
+                <!-- Notification List Frien Requests -->
+
+                <ul class="notification-list friend-requests">
+                    @foreach (var item in Model)
+                    {
+                        <li>
+                            <div class="author-thumb">
+                                @if (item.pic == true)
+                                {
+                                    <img alt="@(item.Fname + " " + item.lname) " src="/content/User/@item.id/@(item.id + ".png")" class="avatar">
+
+                                }
+                                else
+                                {
+                                    <img src="/content/assets/img/avatar55-sm.jpg" alt="@item.Fname">
+                                }
+                            </div>
+                            <div class="notification-event " id="@("friendreqdiv"+item.id)" >
+                                <a href="/User/Profilo/@item.id" class="h6 notification-friend">@(item.Fname + " " + item.lname) </a>
+
+                            </div>
+                            <span class="notification-icon " id="@("friendreqspan"+item.id)">
+                                <a  onclick="AcceptRequestFriendpage(@item.id)" class="accept-request">
+                                    <span class="icon-add">
+                                        <svg class="olymp-happy-face-icon"><use xlink:href="/content/assets/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                                    </span>
+                                    Accept Friend Request
+                                </a>
+
+                                <a onclick="IgnorRequestFriendpage(@item.id)" class="accept-request request-del">
+                                    <span class="icon-minus">
+                                        <svg class="olymp-happy-face-icon"><use xlink:href="/content/assets/svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                                    </span>
+                                </a>
+
+                            </span>
+                            <div class="notification-event" id="@("acceptreqdiv"+item.id)" style="display:none">
+                                You and <a href="/User/Profilo/@item.id" class="h6 notification-friend">@(item.Fname + " " + item.lname)</a> just became friends.
+                            </div>
+                            <div class="notification-event" id="@("Ignoredreqdiv"+item.id)" style="display:none">
+                                You Ignored <a href="/User/Profilo/@item.id" class="h6 notification-friend">@(item.Fname + " " + item.lname)</a> Request.
+                            </div>
+                            <span class="notification-icon " id="@("iconchange"+item.id)" style="display:none">
+                                <svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+                            </span>
+                            
+                        </li>
+                    }
+                   
+
+
+
+                </ul>
+
+                <!-- ... end Notification List Frien Requests -->
+            </div>
+
+        </div>
+
+        <div class="col col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12  responsive-display-none">
+            <div class="ui-block">
+
+
+
+                <!-- Your Profile  -->
+
+                <div class="your-profile">
+                    <div class="ui-block-title ui-block-title-small">
+                        <h6 class="title">Your PROFILE</h6>
+                    </div>
+
+                    <div id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <h6 class="mb-0">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Profile Settings
+                                        <svg class="olymp-dropdown-arrow-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
+                                    </a>
+                                </h6>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                <ul class="your-profile-menu">
+                                    <li>
+                                        <a href="/User/EditProfile">Personal Information</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/User/ChangePassword">Change Password</a>
+                                    </li>
+                                    <li>
+                                        <a href="/User/Hobbies">Hobbies and Interests</a>
+                                    </li>
+                                    <li>
+                                        <a href="/User/EducationAndEmployement">Education and Employement</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui-block-title">
+                        <a href="/User/Notifications" class="h6 title">Notifications</a>
+                        <a href="#" class="items-round-little bg-primary" id="notificationNum"></a>
+                    </div>
+
+                    <div class="ui-block-title">
+                        <a href="/User/FriendsRequests" class="h6 title">Friend Requests</a>
+                        <a href="#" class="items-round-little bg-blue" id="frnum"></a>
+                    </div>
+
+                </div>
+
+                <!-- ... end Your Profile  -->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ... end Your Account Personal Information -->
+<script>
+    function AcceptRequestFriendpage(arg) {
+        $.ajax({
+
+            url: '/User/AcceptFriend',
+            type: 'POST',
+            datatype: 'json',
+            data: { id: arg }
+
+
+        }).done(function (data) {
+            if (data) {
+                //done
+          
+                BlocksectionId = "acceptreqdiv" + arg;
+                nonesectionid = "friendreqdiv" + arg;
+                document.getElementById(BlocksectionId).style.display = "block";
+                document.getElementById(nonesectionid).style.display = "none";
+                blockspan = "iconchange"+arg;
+                nonespan = "friendreqspan" + arg;
+                document.getElementById(blockspan).style.display = "block";
+                document.getElementById(nonespan).style.display = "none";
+            }
+            else {
+                //Error
+
+            }
+
+        });
+    }
+
+
+
+    function IgnorRequestFriendpage(arg) {
+        $.ajax({
+
+            url: '/User/IgnorFriend',
+            type: 'POST',
+            datatype: 'json',
+            data: { id: arg }
+
+
+        }).done(function (data) {
+            if (data) {
+                //done
+             
+                BlocksectionId = "Ignoredreqdiv" + arg;
+                nonesectionid = "friendreqdiv" + arg;
+                document.getElementById(BlocksectionId).style.display = "block";
+                document.getElementById(nonesectionid).style.display = "none";
+                blockspan = "iconchange" + arg;
+                nonespan = "friendreqspan" + arg;
+                document.getElementById(blockspan).style.display = "block";
+                document.getElementById(nonespan).style.display = "none";
+
+            }
+            else {
+                //Error
+
+            }
+
+        });
+    }
+</script>

@@ -1,0 +1,337 @@
+﻿@model H_project1.Models.ViewModel.EducationAndEmployementViewModel
+@{
+    ViewBag.Title = "EducationAndEmployement";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@section style{
+    <link rel="stylesheet" href="~/Content/sweetalert2/sweetalert2.min.css">
+}
+<div class="header-spacer header-spacer-small"></div>
+
+<div class="main-header" style="width: 100% !important; max-width: 100%">
+    <div class="content-bg-wrap bg-account"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
+                <div class="main-header-content">
+                    <h1>Your Account Dashboard</h1>
+                    <p>
+                        Welcome to your account dashboard! Here you’ll find everything you need to change your profile
+                        information, settings, read notifications and requests, view your latest messages, change your pasword and much
+                        more!, have fun!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img class="img-bottom" src="/content/assets/img/account-bottom.png" alt="friends">
+</div>
+
+<!-- ... end Main Header Account -->
+<div class="container">
+    <div class="row">
+        <div class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
+            <div class="ui-block">
+                <div class="ui-block-title">
+                    <h6 class="title">Your Education History</h6>
+                </div>
+                <div class="ui-block-content">
+
+
+                    <!-- Education History Form -->
+                    @if (Model == null)
+                    {
+                        <div>
+                            <div class="row">
+
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Title </label>
+                                        <input class="form-control" id="edu_title" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Place</label>
+                                        <input class="form-control" id="edu_place" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Description</label>
+                                        <textarea class="form-control" id="edu_description"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <button class="btn btn-secondary btn-lg full-width" type="reset">Cancel</button>
+                                </div>
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <button class="btn btn-primary btn-lg full-width" type="button" onclick="Education()">Save Education Changes</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    else
+                    {
+                        <div>
+                            <div class="row">
+
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Title </label>
+                                        <input class="form-control" id="edu_title" value="@Model.Education_title" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Place</label>
+                                        <input class="form-control" id="edu_place" value="@Model.Education_place" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Description</label>
+                                        <textarea class="form-control" id="edu_description">@Model.Edu_Describtion</textarea>
+                                    </div>
+                                </div>
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <button class="btn btn-secondary btn-lg full-width" type="reset">Cancel</button>
+                                </div>
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <button class="btn btn-primary btn-lg full-width" type="button" onclick="Education()">Save Education Changes</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+                    <!-- ... end Education History Form -->
+                </div>
+            </div>
+            <div class="ui-block">
+                <div class="ui-block-title">
+                    <h6 class="title">Your Employement History</h6>
+                </div>
+                <div class="ui-block-content">
+
+
+                    <!-- Employement History Form -->
+                    @if (Model == null)
+                    {
+                        <div>
+                            <div class="row">
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Title </label>
+                                        <input class="form-control" id="emp_title" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Place</label>
+                                        <input class="form-control" id="emp_place" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Description</label>
+                                        <textarea class="form-control" id="emp_description" ></textarea>
+                                    </div>
+                                </div>
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <button class="btn btn-secondary btn-lg full-width" type="reset">Cancel</button>
+                                </div>
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <button class="btn btn-primary btn-lg full-width" type="button" onclick="Employee()">Save Employee Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div>
+                            <div class="row">
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Title </label>
+                                        <input class="form-control" id="emp_title" value="@Model.Employee_Title" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Place</label>
+                                        <input class="form-control" id="emp_place" value="@Model.Employee_place" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Description</label>
+                                        <textarea class="form-control" id="emp_description">@Model.Emp_Describtion</textarea>
+                                    </div>
+                                </div>
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <button class="btn btn-secondary btn-lg full-width" type="reset">Cancel</button>
+                                </div>
+                                <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <button class="btn btn-primary btn-lg full-width" onclick="Employee()" type="button">Save Employee Changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                 
+
+                    <!-- ... end Employement History Form -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12  responsive-display-none">
+            <div class="ui-block">
+
+
+
+                <!-- Your Profile  -->
+
+                <div class="your-profile">
+                    <div class="ui-block-title ui-block-title-small">
+                        <h6 class="title">Your PROFILE</h6>
+                    </div>
+
+                    <div id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <h6 class="mb-0">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Profile Settings
+                                        <svg class="olymp-dropdown-arrow-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
+                                    </a>
+                                </h6>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                <ul class="your-profile-menu">
+                                    <li>
+                                        <a href="/User/EditProfile">Personal Information</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="/User/ChangePassword">Change Password</a>
+                                    </li>
+                                    <li>
+                                        <a href="/User/Hobbies">Hobbies and Interests</a>
+                                    </li>
+                                    <li>
+                                        <a href="/User/EducationAndEmployement">Education and Employement</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ui-block-title">
+                        <a href="/User/Notifications" class="h6 title">Notifications</a>
+                        <a href="#" class="items-round-little bg-primary" id="notificationNum"></a>
+                    </div>
+
+                    <div class="ui-block-title">
+                        <a href="/User/FriendsRequests" class="h6 title">Friend Requests</a>
+                        <a href="#" class="items-round-little bg-blue" id="frnum"></a>
+                    </div>
+
+                </div>
+
+                <!-- ... end Your Profile  -->
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section script{
+    <script src="~/Content/sweetalert2/sweetalert2.min.js"></script>
+
+    <script>
+        function Education() {
+            debugger;
+            if (edu_title.value == "" || edu_place.value == "" || edu_description.value == "")
+            {
+                swal({
+                    type: 'error',
+                    title: 'Error',
+                    html: 'Enter all entities '
+                })
+                return;
+            }
+            $.ajax({
+                url: '/User/Education',
+                type: 'POST',
+                datatype: 'json',
+                data: { Education_title: edu_title.value, Education_place: edu_place.value, Describtion: edu_description.value }
+            }).done(function (data) {
+                if (data) {
+                    swal({
+                        type: 'success',
+                        title: 'Your Profile Updated',
+                        html: 'Your Profile Updated'
+                    })
+                }
+                else {
+                    swal({
+                        type: 'error',
+                        title: 'Error',
+                        html: 'Change did not saved '
+                    })
+                }
+
+            });
+        }
+
+        function Employee() {
+            debugger;
+            if (emp_title.value == "" || emp_place.value == "" || emp_description.value == "") {
+                swal({
+                    type: 'error',
+                    title: 'Error',
+                    html: 'Enter all entiteis '
+                })
+                return;
+            }
+            $.ajax({
+                url: '/User/Employee',
+                type: 'POST',
+                datatype: 'json',
+                data: { Employee_Title: emp_title.value, Employee_place: emp_place.value, Describtion: emp_description.value }
+            }).done(function (data) {
+                if (data) {
+                    swal({
+                        type: 'success',
+                        title: 'Your Profile Updated',
+                        html: 'Your Profile Updated'
+                    })
+                }
+                else {
+                    swal({
+                        type: 'error',
+                        title: 'Error',
+                        html: 'Change did not saved '
+                    })
+                }
+
+            });
+        }
+    </script>
+
+
+
+}

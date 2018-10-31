@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'IYN';
+    src: url(../fonts/iran-yekan/woff/iranyekanwebregular.woff) format('woff'), url(../fonts/iran-yekan/ttf/iranyekanwebregular.ttf) format('truetype'), url(../fonts/iran-yekan/eot/iranyekanwebregular.eot) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'IYB';
+    src: url(../fonts/iran-yekan/woff/iranyekanwebbold.woff) format('woff'), url(../fonts/iran-yekan/ttf/iranyekanwebbold.ttf) format('truetype'), url(../fonts/iran-yekan/eot/iranyekanwebbold.eot) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'ISL';
+    src: url(../fonts/iran-sans/woff/IRANSansWeb_Light.woff) format('woff'), url(../fonts/iran-sans/ttf/IRANSansWeb_Light.ttf) format('truetype'), url(../fonts/iran-sans/eot/IRANSansWeb_Light.eot) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'ISN';
+    src: url(../fonts/iran-sans/woff/IRANSansWeb.woff) format('woff'), url(../fonts/iran-sans/ttf/IRANSansWeb.ttf) format('truetype'), url(../fonts/iran-sans/eot/IRANSansWeb.eot) format('embedded-opentype');
+}
+
+@font-face {
+    font-family: 'ISB';
+    src: url(../fonts/iran-sans/woff/IRANSansWeb_Bold.woff) format('woff'), url(../fonts/iran-sans/ttf/IRANSansWeb_Bold.ttf) format('truetype'), url(../fonts/iran-sans/eot/IRANSansWeb_Bold.eot) format('embedded-opentype');
+}
+
+:root {
+    --White: #fff;
+    --Black: #000;
+    --Gray: #272733;
+    --Pink: #f1606d;
+    --Blue: #0692f3;
+    --Orange: #fa551f;
+}
+
+* {
+    outline: none !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    direction: ltr;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    color: inherit;
+    font: inherit;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    line-height: 100%;
+    font-family: 'IYN';
+    color: var(--Black);
+    font-size: 15px;
+}
+
+html, body {
+    direction: ltr;
+    text-align: left;
+    background-color: var(--White);
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body {
+    min-height: 100vh;
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--Black);
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, h1, h2, h3, h4, h5, h6 {
+    display: block;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.clear-fix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
